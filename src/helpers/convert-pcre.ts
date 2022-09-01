@@ -1,4 +1,5 @@
 /** Convert a PCRE regex into JS. */
+const supportedRegexFlags = ['d', 'g', 'i', 'm', 's', 'u', 'y'] // https://tc39.es/ecma262/multipage/text-processing.html#sec-get-regexp.prototype.flags
 export default function pcre(regex: string): RegExp {
 	let finalRegex = regex;
 	const replace = (search: string | RegExp, replace: string) => finalRegex = finalRegex.replace(search, replace);
@@ -8,7 +9,7 @@ export default function pcre(regex: string): RegExp {
 	const startMatches = regex.matchAll(/\(\?([a-z]+)\)/g);
 	for (const [match, flags] of [...inlineMatches, ...startMatches]) {
 		replace(match, '');
-		[...flags].forEach(flag => finalFlags.add(flag));
+		[...flags].filter(flag => supportedRegexFlags.includes(flag)).forEach(flag => finalFlags.add(flag));
 	}
 	// Remove invalid syntax
 	replace(/([*+]){2}/g, '$1');
