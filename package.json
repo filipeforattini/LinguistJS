@@ -40,19 +40,19 @@
 	"homepage": "https://github.com/Nixinova/Linguist#readme",
 	"dependencies": {
 		"binary-extensions": "^2.2.0",
-		"commander": "^9.4.0",
+		"commander": "^9.4.1",
 		"common-path-prefix": "^3.0.0",
 		"cross-fetch": "^3.1.5",
 		"ignore": "^5.2.0",
-		"isbinaryfile": "^4.0.8",
+		"isbinaryfile": "^5.0.0",
 		"js-yaml": "^4.1.0",
 		"node-cache": "^5.1.2",
-		"tsx": "^3.9.0"
+		"tsx": "^3.12.1"
 	},
 	"devDependencies": {
 		"@types/js-yaml": "^4.0.5",
-		"@types/node": "ts4.8",
-		"deep-object-diff": "^1.1.7",
-		"typescript": "~4.8.2"
+		"@types/node": "ts4.7",
+		"deep-object-diff": "^1.1.9",
+		"typescript": "~4.9.3"
 	}
 }
